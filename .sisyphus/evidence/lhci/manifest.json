@@ -1,0 +1,14 @@
+[
+  {
+    "url": "http://localhost:3000/",
+    "isRepresentativeRun": true,
+    "htmlPath": "C:\\Users\\valen\\Desktop\\Copywrighting\\Projects\\Web-page_test\\.sisyphus\\evidence\\lhci\\localhost--2026_02_15_23_26_59.report.html",
+    "jsonPath": "C:\\Users\\valen\\Desktop\\Copywrighting\\Projects\\Web-page_test\\.sisyphus\\evidence\\lhci\\localhost--2026_02_15_23_26_59.report.json",
+    "summary": {
+      "performance": 1,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  }
+]
