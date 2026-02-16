@@ -4,12 +4,12 @@ import { Sora, Syne } from "next/font/google";
 import "./globals.css";
 
 const sora = Sora({
-  variable: "--font-manrope",
+  variable: "--font-sora",
   subsets: ["latin"],
 });
 
 const syne = Syne({
-  variable: "--font-space-grotesk",
+  variable: "--font-syne",
   subsets: ["latin"],
 });
 

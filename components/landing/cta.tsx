@@ -119,7 +119,7 @@ export function CTA() {
           <div className="rounded-[var(--radius-lg)] border border-[var(--color-border-strong)] bg-[color-mix(in_oklab,var(--color-surface),transparent_14%)] p-5 shadow-[var(--shadow-card)] md:p-6">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[color-mix(in_oklab,var(--color-surface),transparent_10%)] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--color-text-muted)]">
               <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
-              SOC2-готовые процессы
+              Процессы готовы к SOC2
             </div>
             <p className="mb-4 text-sm text-[var(--color-text-muted)]">
               Получить доступ к онбордингу

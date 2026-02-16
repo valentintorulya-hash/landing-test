@@ -28,7 +28,7 @@ export function ThemeToggle() {
       data-testid="theme-toggle"
       variant="outline"
       onClick={toggle}
-      aria-label="Toggle theme"
+      aria-label="Переключить тему"
       className="min-w-30 gap-2 rounded-full px-4"
     >
       <span
@@ -36,10 +36,10 @@ export function ThemeToggle() {
         className="h-2 w-2 rounded-full bg-[var(--color-accent)]"
       />
       <span className="text-xs uppercase tracking-[0.08em] text-[var(--color-text-muted)]">
-        Theme
+        Тема
       </span>
       <span className="rounded-full border border-[var(--color-border)] px-2 py-0.5 text-xs font-semibold text-[var(--color-text)]">
-        {theme === "dark" ? "Light" : "Dark"}
+        {theme === "dark" ? "Светлая" : "Тёмная"}
       </span>
     </Button>
   );

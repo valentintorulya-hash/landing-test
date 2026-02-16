@@ -4,8 +4,8 @@
 :root,
 html[data-theme="dark"] {
   color-scheme: dark;
-  --font-body: var(--font-manrope);
-  --font-heading: var(--font-space-grotesk);
+  --font-body: var(--font-sora);
+  --font-heading: var(--font-syne);
 
   --color-bg: #060b1a;
   --color-bg-soft: #0b1226;

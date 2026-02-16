@@ -16,37 +16,37 @@ export default function Home() {
             <li>
               <a
                 href="#top"
-                aria-label="Go to hero"
+                aria-label="К началу"
                 className="block h-2.5 w-2.5 rounded-full bg-[var(--color-accent)]"
               >
-                <span className="sr-only">Hero</span>
+                <span className="sr-only">Главная</span>
               </a>
             </li>
             <li>
               <a
                 href="#features"
-                aria-label="Go to features"
+                aria-label="К возможностям"
                 className="block h-2.5 w-2.5 rounded-full bg-[var(--color-border-strong)]"
               >
-                <span className="sr-only">Features</span>
+                <span className="sr-only">Возможности</span>
               </a>
             </li>
             <li>
               <a
                 href="#testimonials"
-                aria-label="Go to testimonials"
+                aria-label="К отзывам"
                 className="block h-2.5 w-2.5 rounded-full bg-[var(--color-border-strong)]"
               >
-                <span className="sr-only">Testimonials</span>
+                <span className="sr-only">Отзывы</span>
               </a>
             </li>
             <li>
               <a
                 href="#cta"
-                aria-label="Go to call to action"
+                aria-label="К действию"
                 className="block h-2.5 w-2.5 rounded-full bg-[var(--color-border-strong)]"
               >
-                <span className="sr-only">Call to action</span>
+                <span className="sr-only">Призыв к действию</span>
               </a>
             </li>
           </ul>
@@ -56,10 +56,18 @@ export default function Home() {
       <div className="pointer-events-none absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-[linear-gradient(to_bottom,transparent,var(--color-border),transparent)] opacity-40" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-[linear-gradient(180deg,color-mix(in_oklab,var(--color-accent-2),transparent_88%),transparent)]" />
       <div id="top" className="relative mx-auto max-w-[1180px] px-5 py-8 md:px-8 md:py-12">
-        <Hero />
-        <Features />
-        <Testimonials />
-        <CTA />
+        <div className="reveal-in">
+          <Hero />
+        </div>
+        <div className="reveal-in reveal-delay-1">
+          <Features />
+        </div>
+        <div className="reveal-in reveal-delay-2">
+          <Testimonials />
+        </div>
+        <div className="reveal-in reveal-delay-2">
+          <CTA />
+        </div>
         <Footer />
       </div>
     </main>

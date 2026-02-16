@@ -108,11 +108,11 @@ export function Hero() {
           <div className="rounded-[var(--radius-xl)] border border-[var(--color-border-strong)] bg-[linear-gradient(160deg,var(--color-surface-2),var(--color-surface-3))] p-5 shadow-[var(--shadow-card)]">
             <div className="flex items-center justify-between gap-3">
               <p className="text-xs uppercase tracking-[0.12em] text-[var(--color-text-muted)]">
-                Pulseboard Command View
+                Командный центр Pulseboard
               </p>
               <span className="inline-flex items-center gap-1 rounded-full border border-[var(--color-border)] bg-[color-mix(in_oklab,var(--color-surface),transparent_12%)] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-[var(--color-text-muted)]">
                 <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
-                Live
+                Онлайн
               </span>
             </div>
             <div className="mt-4 space-y-3">
@@ -139,7 +139,7 @@ export function Hero() {
 
             <div className="mt-4 rounded-[var(--radius-md)] border border-[var(--color-border)] bg-[linear-gradient(160deg,color-mix(in_oklab,var(--color-surface),transparent_10%),color-mix(in_oklab,var(--color-surface-2),transparent_12%))] px-4 py-3 shadow-[inset_0_1px_0_rgb(255_255_255_/_0.06)]">
               <p className="text-[11px] uppercase tracking-[0.12em] text-[var(--color-text-muted)]">
-                Live integrations
+                Активные интеграции
               </p>
               <div className="mt-2 flex flex-wrap gap-2">
                 {integrations.map((integration) => (
