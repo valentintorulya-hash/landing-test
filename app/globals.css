@@ -7,27 +7,32 @@ html[data-theme="dark"] {
   --font-body: var(--font-manrope);
   --font-heading: var(--font-space-grotesk);
 
-  --color-bg: #050814;
-  --color-surface: #0d1326;
-  --color-surface-2: #121b34;
-  --color-text: #ebf0ff;
-  --color-text-muted: #a6b3d6;
-  --color-border: #2a3a62;
-  --color-border-strong: #47619a;
-  --color-accent: #5eead4;
-  --color-accent-soft: #2dd4bf;
-  --color-ink: #032822;
-  --color-danger: #ff8a9b;
-  --color-spotlight: color-mix(in oklab, var(--color-accent), transparent 78%);
-  --color-spotlight-2: color-mix(in oklab, #77a8ff, transparent 78%);
+  --color-bg: #060b1a;
+  --color-bg-soft: #0b1226;
+  --color-surface: #0f1832;
+  --color-surface-2: #141f3f;
+  --color-surface-3: #1b2852;
+  --color-text: #f3f6ff;
+  --color-text-muted: #a9b5d9;
+  --color-border: #2d3f72;
+  --color-border-strong: #4f69ae;
+  --color-accent: #59e6c8;
+  --color-accent-soft: #8bf0dc;
+  --color-accent-2: #70a6ff;
+  --color-ink: #03251e;
+  --color-danger: #ff8ca4;
+  --color-warning: #ffcf7a;
+  --color-spotlight: color-mix(in oklab, var(--color-accent), transparent 80%);
+  --color-spotlight-2: color-mix(in oklab, var(--color-accent-2), transparent 82%);
 
   --radius-sm: 0.625rem;
   --radius-md: 0.85rem;
   --radius-lg: 1.15rem;
   --radius-xl: 1.6rem;
 
-  --shadow-soft: 0 24px 60px rgb(0 0 0 / 30%);
-  --shadow-glow: 0 12px 28px color-mix(in oklab, var(--color-accent), transparent 68%);
+  --shadow-soft: 0 24px 60px rgb(0 0 0 / 32%);
+  --shadow-card: 0 14px 44px rgb(0 0 0 / 35%);
+  --shadow-glow: 0 14px 36px color-mix(in oklab, var(--color-accent), transparent 70%);
 }
 
 @theme inline {
@@ -38,35 +43,94 @@ html[data-theme="dark"] {
 
 html[data-theme="light"] {
   color-scheme: light;
-  --color-bg: #f3f7ff;
+  --color-bg: #eff4ff;
+  --color-bg-soft: #f8faff;
   --color-surface: #ffffff;
-  --color-surface-2: #eef4ff;
-  --color-text: #101936;
-  --color-text-muted: #3b4c78;
-  --color-border: #c6d5f6;
+  --color-surface-2: #eef3ff;
+  --color-surface-3: #e0eaff;
+  --color-text: #111c3d;
+  --color-text-muted: #405284;
+  --color-border: #c5d4f4;
   --color-border-strong: #89a5e4;
-  --color-accent: #0e7490;
-  --color-accent-soft: #0891b2;
+  --color-accent: #0f907b;
+  --color-accent-soft: #0ea992;
+  --color-accent-2: #3f6ee9;
   --color-ink: #f0fbff;
   --color-danger: #b32442;
+  --color-warning: #a95f00;
   --color-spotlight: color-mix(in oklab, var(--color-accent), transparent 87%);
-  --color-spotlight-2: color-mix(in oklab, #99bbff, transparent 84%);
+  --color-spotlight-2: color-mix(in oklab, var(--color-accent-2), transparent 87%);
+  --shadow-soft: 0 24px 60px rgb(32 56 128 / 12%);
+  --shadow-card: 0 14px 40px rgb(32 56 128 / 14%);
+  --shadow-glow: 0 12px 32px color-mix(in oklab, var(--color-accent), transparent 80%);
 }
 
 * {
   border-color: var(--color-border);
 }
 
+::selection {
+  background: color-mix(in oklab, var(--color-accent), transparent 65%);
+  color: var(--color-text);
+}
+
 body {
   background:
-    radial-gradient(circle at 10% -10%, var(--color-spotlight), transparent 30%),
-    radial-gradient(circle at 95% 5%, var(--color-spotlight-2), transparent 30%),
+    radial-gradient(circle at 8% -8%, var(--color-spotlight), transparent 36%),
+    radial-gradient(circle at 98% 4%, var(--color-spotlight-2), transparent 34%),
+    linear-gradient(180deg, var(--color-bg-soft), var(--color-bg)),
     var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body), sans-serif;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.65;
+  letter-spacing: 0.01em;
   min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklab, var(--color-accent), transparent 45%)
+    color-mix(in oklab, var(--color-surface), transparent 25%);
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: color-mix(in oklab, var(--color-surface), transparent 22%);
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  border: 2px solid color-mix(in oklab, var(--color-surface), transparent 20%);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--color-accent-soft), transparent 12%),
+    color-mix(in oklab, var(--color-accent-2), transparent 15%)
+  );
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--color-accent), transparent 8%),
+    color-mix(in oklab, var(--color-accent-2), transparent 8%)
+  );
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading), sans-serif;
+  letter-spacing: -0.02em;
 }
 
 @media (min-width: 1024px) {

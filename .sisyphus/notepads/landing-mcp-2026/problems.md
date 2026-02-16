@@ -6,3 +6,5 @@
   - Resolution: switched to app-controlled validation path and re-verified across all viewports.
 - 2026-02-16: Tablet project initially targeted a WebKit profile unavailable locally.
   - Resolution: switched tablet project to Chromium while preserving viewport coverage requirements.
+- 2026-02-16: Intermittent Next.js errors (`/_document` not found, React client manifest module mismatch) appeared when build/test workflows overlapped.
+  - Resolution: cleaned `.next`, validated fresh production build, and changed Playwright webServer command to `npm run build && npm run start` for deterministic runs.

@@ -4,3 +4,30 @@
 - 2026-02-16: Use Chromium-based tablet project at `768x1024` for deterministic local execution without WebKit install dependency.
 - 2026-02-16: Keep CTA email validation in app logic using `type="text"` + regex to avoid native browser validation bypassing test flow.
 - 2026-02-16: Treat plan as complete only after build, E2E, and LHCI evidence files are written under `.sisyphus/evidence`.
+- 2026-02-16: Shift Playwright `webServer` to production mode (`build && start`) to eliminate transient Next.js dev-manifest flakiness during parallel runs.
+- 2026-02-16: Keep deterministic `data-testid` selectors unchanged while redesigning visuals, typography, and section layout so E2E coverage remains stable.
+- 2026-02-16: Introduce per-card feature tones (ocean/mint/violet/amber) to avoid repetitive bento styling while preserving semantic card order and selectors.
+- 2026-02-16: Add trust/proof density in Hero and CTA (integration pills + proof stat cards) instead of introducing new sections, preserving single-page scope and test contracts.
+- 2026-02-16: Refine shared UI primitives (`Card`, `Input`) with subtle inner highlights and hover-border emphasis to raise perceived quality consistently across sections.
+- 2026-02-16: Add dedicated mobile hero quick-nav pills to reduce long-scroll friction on small screens while keeping desktop navigation unchanged.
+- 2026-02-16: Increase CTA trust clarity with an inline pilot-support note and diversify testimonial impact tones to improve scanability without touching interaction logic.
+- 2026-02-16: Add compact feature-card signal bars to create stronger data-product visual cues while preserving the existing feature copy and test selectors.
+- 2026-02-16: Add testimonial proof-stat strip above cards to strengthen social-proof density without changing testimonial interaction behavior or selectors.
+- 2026-02-16: Add hero mode chips (`Plan`, `Align`, `Ship`) near primary actions to reinforce product workflow narrative without introducing new interaction complexity.
+- 2026-02-16: Add testimonial company-initial badges and relabel trust chip to `Case study` to make social proof feel more editorial and less generic.
+- 2026-02-16: Add feature-section audience rails (`Product`, `Engineering`, `Operations`) to clarify cross-functional positioning without changing card structure or selectors.
+- 2026-02-16: Add CTA vertical chips (`Fintech`, `Health`, `SaaS`, `E-commerce`) near form intro to strengthen buyer-context clarity without altering form behavior.
+- 2026-02-16: Add per-feature freshness badges ("Updated X min ago") to emphasize live-operating-system positioning while keeping feature card selectors and layout semantics stable.
+- 2026-02-16: Add a desktop section-dot rail on the page edge for faster in-page navigation while keeping section IDs and existing test selectors unchanged.
+- 2026-02-16: Add command-panel sync state tiles in Hero (`Data sync`, `Next digest`) to reinforce live-system credibility without changing CTA or section behavior.
+- 2026-02-16: Upgrade mobile sticky CTA with richer gradient container and directional cue iconography while preserving the same anchor and `mobile-sticky-cta` selector.
+- 2026-02-16: Refine theme toggle copy to compact badge-style (`Theme` + active target mode) and set Playwright `reuseExistingServer` to `false` for deterministic test runs.
+- 2026-02-16: Elevate shared button tactile feel (subtle top highlight + active press offset) at the primitive level to improve consistency across hero/CTA/actions without changing selectors.
+- 2026-02-16: Add subtle hover/focus lift to testimonial card triggers to improve perceived interactivity while keeping card selection logic and test IDs unchanged.
+- 2026-02-16: Add a compact `Live` status chip in the Hero command panel header to reinforce real-time product perception without changing command panel behavior.
+- 2026-02-16: Add smooth-scroll and themed scrollbar styling at global CSS level to improve navigation feel and polish without touching component logic or test hooks.
+- 2026-02-16: Add a thin gradient top accent line to testimonial cards for stronger visual hierarchy while preserving existing testimonial interactions and selectors.
+- 2026-02-16: Add a concise trust badge (`SOC2-ready workflows`) inside CTA form card to strengthen enterprise confidence cues while preserving form behavior and selectors.
+- 2026-02-16: Increase hero KPI card depth with subtle gradient/inset highlight treatment to improve readability and premium feel without changing KPI content or test behavior.
+- 2026-02-16: Add a top atmospheric gradient veil at page level to improve first-screen depth while preserving section structure and all test selectors.
+- 2026-02-16: Add a subtle top accent line to feature cards to visually align card treatment across sections while keeping `feature-card` test hooks and behavior unchanged.

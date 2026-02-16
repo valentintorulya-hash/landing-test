@@ -40,9 +40,9 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: `npm run dev -- --port ${PORT}`,
+    command: `npm run build && npm run start -- --port ${PORT}`,
     url: baseURL,
-    reuseExistingServer: !process.env.CI,
-    timeout: 120_000,
+    reuseExistingServer: false,
+    timeout: 240_000,
   },
 });

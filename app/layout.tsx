@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Manrope, Space_Grotesk } from "next/font/google";
+import { Sora, Syne } from "next/font/google";
 
 import "./globals.css";
 
-const manrope = Manrope({
+const sora = Sora({
   variable: "--font-manrope",
   subsets: ["latin"],
 });
 
-const spaceGrotesk = Space_Grotesk({
+const syne = Syne({
   variable: "--font-space-grotesk",
   subsets: ["latin"],
 });
@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="dark">
-      <body className={`${manrope.variable} ${spaceGrotesk.variable} antialiased`}>
+      <body className={`${sora.variable} ${syne.variable} antialiased`}>
         {children}
       </body>
     </html>

@@ -29,8 +29,18 @@ export function ThemeToggle() {
       variant="outline"
       onClick={toggle}
       aria-label="Toggle theme"
+      className="min-w-30 gap-2 rounded-full px-4"
     >
-      {theme === "dark" ? "Light mode" : "Dark mode"}
+      <span
+        aria-hidden="true"
+        className="h-2 w-2 rounded-full bg-[var(--color-accent)]"
+      />
+      <span className="text-xs uppercase tracking-[0.08em] text-[var(--color-text-muted)]">
+        Theme
+      </span>
+      <span className="rounded-full border border-[var(--color-border)] px-2 py-0.5 text-xs font-semibold text-[var(--color-text)]">
+        {theme === "dark" ? "Light" : "Dark"}
+      </span>
     </Button>
   );
 }
