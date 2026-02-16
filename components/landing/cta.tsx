@@ -8,12 +8,12 @@ import { Input } from "@/components/ui/input";
 type SubmitState = "idle" | "loading" | "success";
 
 const proofPoints = [
-  { label: "Median onboarding", value: "4m 12s" },
-  { label: "Pilot to rollout", value: "11 days" },
-  { label: "Avg. PM time saved", value: "8h / week" },
+  { label: "Медианное внедрение", value: "4м 12с" },
+  { label: "От пилота до раскатки", value: "11 дней" },
+  { label: "Экономия времени PM", value: "8ч / неделю" },
 ];
 
-const verticals = ["Fintech", "Health", "SaaS", "E-commerce"];
+const verticals = ["Финтех", "Здоровье", "SaaS", "E-commerce"];
 
 export function CTA() {
   const [email, setEmail] = useState("");
@@ -22,9 +22,9 @@ export function CTA() {
   const [toast, setToast] = useState("");
 
   const buttonLabel = useMemo(() => {
-    if (submitState === "loading") return "Sending...";
-    if (submitState === "success") return "Pilot unlocked";
-    return "Request invite";
+    if (submitState === "loading") return "Отправка...";
+    if (submitState === "success") return "Пилот разблокирован";
+    return "Запросить инвайт";
   }, [submitState]);
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -33,7 +33,7 @@ export function CTA() {
 
     const valid = /^\S+@\S+\.\S+$/.test(email);
     if (!valid) {
-      setError("Please enter a valid email address.");
+      setError("Пожалуйста, введите корректный email адрес.");
       return;
     }
 
@@ -41,7 +41,7 @@ export function CTA() {
     setSubmitState("loading");
     await new Promise((resolve) => setTimeout(resolve, 1000));
     setSubmitState("success");
-    setToast("Success: we sent your pilot access details.");
+    setToast("Успешно: мы отправили детали доступа к пилоту.");
 
     window.setTimeout(() => {
       setSubmitState("idle");
@@ -60,19 +60,19 @@ export function CTA() {
         <div className="relative z-10 grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
           <div>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.13em] text-[var(--color-text-muted)]">
-              Conversion block
+              Блок конверсии
             </p>
             <h2 className="text-3xl font-semibold text-[var(--color-text)] md:text-5xl">
-              Launch your first AI planning cycle this week.
+              Запустите свой первый AI-цикл планирования на этой неделе.
             </h2>
             <p className="mt-4 max-w-xl text-pretty text-lg leading-8 text-[var(--color-text-muted)]">
-              No setup meeting required. Add your workspace email and unlock a
-              guided sandbox in under five minutes.
+              Установочная встреча не требуется. Добавьте рабочий email и откройте
+              управляемую песочницу менее чем за пять минут.
             </p>
 
             <div className="mt-5 flex flex-wrap items-center gap-2">
               <span className="text-xs uppercase tracking-[0.1em] text-[var(--color-text-muted)]">
-                Used by teams in
+                Используют команды в
               </span>
               {verticals.map((vertical) => (
                 <span
@@ -87,15 +87,15 @@ export function CTA() {
             <ul className="mt-8 space-y-3 text-sm text-[var(--color-text-muted)]">
               <li className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
-                Roadmap migration from Jira, Linear, and Notion
+                Миграция роадмапа из Jira, Linear и Notion
               </li>
               <li className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
-                AI-powered sprint plan generated from your existing backlog
+                AI-спринт план, созданный из вашего бэклога
               </li>
               <li className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
-                No credit card, cancel anytime
+                Без привязки карты, отмена в любое время
               </li>
             </ul>
 
@@ -119,10 +119,10 @@ export function CTA() {
           <div className="rounded-[var(--radius-lg)] border border-[var(--color-border-strong)] bg-[color-mix(in_oklab,var(--color-surface),transparent_14%)] p-5 shadow-[var(--shadow-card)] md:p-6">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[color-mix(in_oklab,var(--color-surface),transparent_10%)] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--color-text-muted)]">
               <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
-              SOC2-ready workflows
+              SOC2-готовые процессы
             </div>
             <p className="mb-4 text-sm text-[var(--color-text-muted)]">
-              Get onboarding access
+              Получить доступ к онбордингу
             </p>
             <form onSubmit={onSubmit} className="grid gap-3">
               <Input
@@ -154,17 +154,16 @@ export function CTA() {
 
             {submitState === "success" ? (
               <p className="success-message mt-3 text-sm font-semibold text-[var(--color-accent)]">
-                Pilot request received. Check your inbox.
+                Запрос на пилот получен. Проверьте почту.
               </p>
             ) : null}
 
             <p className="mt-4 text-xs text-[var(--color-text-muted)]">
-              We only use your email for pilot setup instructions.
+              Мы используем ваш email только для инструкций по настройке пилота.
             </p>
 
             <div className="mt-5 rounded-[var(--radius-md)] border border-[var(--color-border)] bg-[color-mix(in_oklab,var(--color-surface-2),transparent_10%)] px-3 py-2 text-xs text-[var(--color-text-muted)]">
-              Setup includes a 14-day guided pilot with checklist templates and
-              migration support.
+              Настройка включает 14-дневный управляемый пилот с шаблонами чек-листов и поддержкой миграции.
             </div>
           </div>
         </div>
@@ -179,7 +178,7 @@ export function CTA() {
           className="flex min-h-11 items-center justify-center gap-2 rounded-full bg-[linear-gradient(120deg,var(--color-accent-soft),var(--color-accent))] px-4 text-sm font-semibold text-[var(--color-ink)]"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-ink)]" />
-          Unlock guided sandbox
+          Разблокировать песочницу
           <span aria-hidden="true">→</span>
         </a>
       </div>

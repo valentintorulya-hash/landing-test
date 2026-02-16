@@ -15,48 +15,48 @@ type Feature = {
 
 const features: Feature[] = [
   {
-    eyebrow: "Coordination",
-    title: "Live Risk Radar",
+    eyebrow: "Координация",
+    title: "Живой радар рисков",
     description:
-      "Detect scope creep and delivery risks before they block launch week.",
+      "Обнаруживайте расширение границ проекта и риски задержек до того, как они заблокируют релиз.",
     size: "md:col-span-4",
     tone: "ocean",
-    detail: ["Auto-prioritized blockers", "Dependency impact map", "Owner-level drilldown"],
+    detail: ["Авто-приоритет блокеров", "Карта зависимостей", "Детализация по владельцам"],
     signal: [42, 60, 76, 88, 92],
-    cadence: "Updated 2 min ago",
+    cadence: "Обновлено 2 мин назад",
   },
   {
-    eyebrow: "Planning",
-    title: "Sprint Drafts in 10s",
+    eyebrow: "Планирование",
+    title: "Черновик спринта за 10с",
     description:
-      "Convert goals into prioritized tasks with clear owners and timelines.",
+      "Превращайте цели в приоритизированные задачи с четкими сроками и ответственными.",
     size: "md:col-span-2",
     tone: "mint",
-    detail: ["Context-aware templates"],
+    detail: ["Контекстные шаблоны"],
     signal: [36, 54, 68, 81, 90],
-    cadence: "Updated 5 min ago",
+    cadence: "Обновлено 5 мин назад",
   },
   {
-    eyebrow: "Reporting",
-    title: "Auto Stakeholder Briefs",
+    eyebrow: "Отчетность",
+    title: "Авто-брифы для стейкхолдеров",
     description:
-      "Generate concise updates from tickets, docs, and standup notes.",
+      "Генерируйте краткие сводки из тикетов, документов и заметок со стендапов.",
     size: "md:col-span-2",
     tone: "violet",
-    detail: ["Weekly narrative snapshots"],
+    detail: ["Еженедельные нарративные снимки"],
     signal: [28, 40, 61, 74, 86],
-    cadence: "Updated 9 min ago",
+    cadence: "Обновлено 9 мин назад",
   },
   {
-    eyebrow: "Delivery",
-    title: "Dependency Heatmap",
+    eyebrow: "Доставка",
+    title: "Тепловая карта зависимостей",
     description:
-      "Visualize blockers across engineering, design, and go-to-market.",
+      "Визуализируйте блокеры между разработкой, дизайном и go-to-market командами.",
     size: "md:col-span-4",
     tone: "amber",
-    detail: ["Release-critical path", "Cross-functional conflict alerts"],
+    detail: ["Критический путь релиза", "Алерты кросс-функциональных конфликтов"],
     signal: [34, 47, 58, 66, 79],
-    cadence: "Updated 3 min ago",
+    cadence: "Обновлено 3 мин назад",
   },
 ];
 
@@ -71,21 +71,20 @@ const toneByFeature: Record<FeatureTone, string> = {
     "bg-[radial-gradient(circle_at_86%_12%,color-mix(in_oklab,var(--color-warning),transparent_75%),transparent_42%),linear-gradient(155deg,color-mix(in_oklab,var(--color-surface),transparent_4%),color-mix(in_oklab,var(--color-surface-2),transparent_8%))]",
 };
 
-const rails = ["Product", "Engineering", "Operations"];
+const rails = ["Продукт", "Инжиниринг", "Операции"];
 
 export function Features() {
   return (
     <section id="features" data-testid="features-section" className="reveal-in reveal-delay-1 mt-20">
       <div className="mb-10 max-w-3xl">
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.13em] text-[var(--color-text-muted)]">
-          Feature architecture
+          Архитектура возможностей
         </p>
         <h2 className="text-3xl font-semibold text-[var(--color-text)] md:text-5xl">
-          Built for cross-functional shipping velocity.
+          Создан для кросс-функциональной скорости доставки.
         </h2>
         <p className="mt-4 text-pretty text-[var(--color-text-muted)]">
-          Every block is designed to reduce decision latency, not just look good
-          in screenshots.
+          Каждый блок спроектирован для снижения задержек в принятии решений, а не просто чтобы хорошо выглядеть на скриншотах.
         </p>
 
         <div className="mt-5 flex flex-wrap gap-2">

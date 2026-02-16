@@ -14,9 +14,9 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  title: "Pulseboard AI | Ship Projects Without Chaos",
+  title: "Pulseboard AI | Запускайте проекты без хаоса",
   description:
-    "Pulseboard AI helps product teams plan, align, and deliver faster with intelligent project workflows.",
+    "Pulseboard AI помогает продуктовым командам планировать, синхронизироваться и выпускать продукты быстрее с помощью умных рабочих процессов.",
 };
 
 export default function RootLayout({
@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="dark">
+    <html lang="ru" data-theme="dark">
       <body className={`${sora.variable} ${syne.variable} antialiased`}>
         {children}
       </body>

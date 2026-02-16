@@ -10,77 +10,67 @@ const testimonials = [
   {
     company: "Northstar Labs",
     quote:
-      "We cut planning time from 6 hours to 40 minutes and still improved sprint confidence.",
-    author: "Marta, VP Product",
-    impact: "42% faster decision cycles",
+      "Мы сократили время планирования с 6 часов до 40 минут и улучшили уверенность в спринтах.",
+    author: "Марта, VP Product",
+    impact: "42% быстрее циклы решений",
     tone: "text-[var(--color-accent-soft)]",
   },
   {
-    company: "Arcflow",
+    company: "Vertex Flow",
     quote:
-      "Pulseboard AI spots dependency issues before they burn engineering cycles.",
-    author: "Jonah, Engineering Director",
-    impact: "31% fewer sprint rollovers",
+      "Pulseboard AI находит проблемы с зависимостями до того, как они сожгут часы разработки.",
+    author: "Джона, Engineering Director",
+    impact: "31% меньше переносов спринтов",
     tone: "text-[var(--color-accent-2)]",
   },
   {
-    company: "Miroline Health",
+    company: "Echo Systems",
     quote:
-      "Status reporting became automatic, so PMs can focus on outcomes, not formatting slides.",
-    author: "Iris, Head of Operations",
-    impact: "8 hours saved weekly per PM",
+      "Отчетность стала автоматической, поэтому PM могут сосредоточиться на результатах, а не слайдах.",
+    author: "Айрис, Head of Operations",
+    impact: "8 часов экономии в неделю",
     tone: "text-[var(--color-accent)]",
   },
 ];
 
 const proofStats = [
-  { label: "Avg. G2 score", value: "4.8 / 5" },
-  { label: "Quarterly NPS delta", value: "+24" },
-  { label: "Active product squads", value: "180+" },
+  { label: "Ср. оценка G2", value: "4.8 / 5" },
+  { label: "Квартальный NPS", value: "+24" },
+  { label: "Активных команд", value: "180+" },
 ];
 
-const byDirection: Record<Direction, string> = {
-  top: "-translate-y-4",
-  right: "translate-x-4",
-  bottom: "translate-y-4",
-  left: "-translate-x-4",
+const byDirection = {
+  top: "-translate-y-full",
+  right: "translate-x-full",
+  bottom: "translate-y-full",
+  left: "-translate-x-full",
 };
 
-function getDirection(event: MouseEvent<HTMLButtonElement>): Direction {
-  const rect = event.currentTarget.getBoundingClientRect();
-  const x = event.clientX - rect.left;
-  const y = event.clientY - rect.top;
-  const top = y;
-  const right = rect.width - x;
-  const bottom = rect.height - y;
-  const left = x;
-  const min = Math.min(top, right, bottom, left);
-
-  if (min === top) return "top";
-  if (min === right) return "right";
-  if (min === bottom) return "bottom";
-  return "left";
-}
-
 export function Testimonials() {
-  const [active, setActive] = useState<number | null>(0);
+  const [active, setActive] = useState(1);
   const [direction, setDirection] = useState<Direction>("top");
+
+  const getDirection = (event: MouseEvent<HTMLButtonElement>): Direction => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const x = event.clientX - rect.left - rect.width / 2;
+    const y = event.clientY - rect.top - rect.height / 2;
+    const angle = Math.atan2(y, x) * (180 / Math.PI);
+    const quadrant = Math.round((angle + 180) / 90 + 3) % 4;
+    return ["top", "right", "bottom", "left"][quadrant] as Direction;
+  };
 
   return (
     <section
       id="testimonials"
       data-testid="testimonials-section"
-      className="reveal-in reveal-delay-2 mt-20"
+      className="relative py-24 md:py-32"
     >
-      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.13em] text-[var(--color-text-muted)]">
-        Customer proof
-      </p>
-      <h2 className="text-3xl font-semibold text-[var(--color-text)] md:text-5xl">
-        Teams that ship faster stay with Pulseboard.
+      <h2 className="text-3xl font-bold tracking-tight text-[var(--color-text)] md:text-4xl">
+        Доверие команд, которые <br />
+        <span className="text-[var(--color-accent)]">строят будущее.</span>
       </h2>
       <p className="mt-4 max-w-3xl text-pretty text-[var(--color-text-muted)]">
-        Stories from product, engineering, and operations teams using one shared
-        execution layer.
+        Истории от продуктовых, инженерных и операционных команд, использующих единый слой исполнения.
       </p>
 
       <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
@@ -146,7 +136,7 @@ export function Testimonials() {
                       </span>
                     </div>
                     <span className="rounded-full border border-[var(--color-border)] px-2 py-1 text-xs text-[var(--color-text-muted)]">
-                      Case study
+                      Кейс-стади
                     </span>
                   </div>
                   <p className="text-base leading-7 text-[var(--color-text)]">

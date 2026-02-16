@@ -34,10 +34,10 @@ test("cta validates invalid and accepts valid emails", async ({ page }) => {
 
   await page.getByTestId("cta-email").fill("invalid-email");
   await page.getByTestId("cta-submit").click();
-  await expect(page.getByText("Please enter a valid email address.")).toBeVisible();
+  await expect(page.getByText("Пожалуйста, введите корректный email адрес.")).toBeVisible();
 
   await page.getByTestId("cta-email").fill("test@example.com");
   await page.getByTestId("cta-submit").click();
-  await expect(page.getByText("Sending...")).toBeVisible();
+  await expect(page.getByText("Отправка...")).toBeVisible();
   await expect(page.locator(".success-message")).toBeVisible();
 });
