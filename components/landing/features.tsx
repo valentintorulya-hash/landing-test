@@ -106,9 +106,10 @@ export function Features() {
           <Card
             key={feature.title}
             data-testid="feature-card"
-            className={`${feature.size} min-h-52 overflow-hidden border-[color-mix(in_oklab,var(--color-border),transparent_10%)] ${toneByFeature[feature.tone]}`}
+            className={`group ${feature.size} min-h-52 overflow-hidden border-[color-mix(in_oklab,var(--color-border),transparent_10%)] ${toneByFeature[feature.tone]} transition-all duration-300 hover:shadow-[var(--shadow-glow)] hover:border-[var(--color-accent-soft)]`}
           >
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,var(--color-accent-soft),transparent)] opacity-75" />
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,var(--color-accent-soft),transparent)] opacity-75 transition-opacity duration-300 group-hover:opacity-100" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,color-mix(in_oklab,var(--color-accent),transparent_90%),transparent_70%)] opacity-0 transition duration-500 group-hover:opacity-100" />
             <div className="relative z-10">
               <p className="mb-4 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--color-text-muted)]">
                 {feature.eyebrow}

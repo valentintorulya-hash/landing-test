@@ -20,8 +20,13 @@ export function Hero() {
     <section
       id="hero"
       data-testid="hero-section"
-      className="reveal-in relative flex min-h-[85vh] flex-col justify-center pt-20 md:pt-32"
+      className="reveal-in relative flex min-h-[85vh] flex-col justify-center overflow-hidden pt-20 md:pt-32"
     >
+      <div className="absolute inset-0 -z-10 opacity-30 blur-3xl" aria-hidden="true">
+        <div className="animate-blob animation-delay-0 absolute -left-4 top-0 h-72 w-72 rounded-full bg-[var(--color-accent)] opacity-40 mix-blend-screen filter md:h-96 md:w-96" />
+        <div className="animate-blob animation-delay-2000 absolute -right-4 top-0 h-72 w-72 rounded-full bg-[var(--color-accent-2)] opacity-40 mix-blend-screen filter md:h-96 md:w-96" />
+        <div className="animate-blob animation-delay-4000 absolute -bottom-8 left-20 h-72 w-72 rounded-full bg-[var(--color-surface-3)] opacity-40 mix-blend-screen filter md:h-96 md:w-96" />
+      </div>
       <header className="relative z-10 flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-2">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[linear-gradient(135deg,var(--color-accent),var(--color-accent-2))] shadow-[var(--shadow-glow)]">
@@ -67,7 +72,7 @@ export function Hero() {
           </div>
           <h1 className="mt-6 text-4xl font-bold leading-[1.1] text-[var(--color-text)] md:text-6xl lg:text-7xl">
             Синхронизируйте продукт <br />
-            <span className="text-transparent bg-clip-text bg-[linear-gradient(135deg,var(--color-accent),var(--color-accent-2))]">
+            <span className="animate-text-shimmer text-transparent bg-clip-text bg-[linear-gradient(110deg,var(--color-accent),45%,var(--color-text),55%,var(--color-accent-2))]">
               со скоростью мысли.
             </span>
           </h1>
